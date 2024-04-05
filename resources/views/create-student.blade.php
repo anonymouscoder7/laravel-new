@@ -9,14 +9,11 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
-    <!-- css -->
-    <link href="{{asset('css/style.css')}}" rel="stylesheet" >
-
-
+    <title>Create Student</title>
+    <link href="{{asset('css/style.css')}}" >
 </head>
 
-<body >
+<body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -38,7 +35,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/student">Student</a>
                     </li>
-                    
+
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -47,8 +44,34 @@
             </div>
         </div>
     </nav>
-    <h1>Hello {{$name }}</h1>
+    <div class="container">
+        <form action="">
+            <div class="form-group">
+                <label for="">Name</label>
+                <input type="text" name="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Email</label>
+                <input type="email" name="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Contact</label>
+                <input type="tel" name="" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="">Description</label>
+                <textarea name="" id="" class="form-control" cols="30" rows="5"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="">Image</label>
+                <input type="file" name="" class="form-control">
+
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="{{asset('public/path')}}"></script>
 </body>
 
 </html>

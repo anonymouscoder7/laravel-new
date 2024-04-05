@@ -18,4 +18,9 @@ class FrontendController extends Controller
     function contact(){
         return view('frontend.contact');
     }
+
+    function student(){
+        return view('create-student');
+
+    }
 }

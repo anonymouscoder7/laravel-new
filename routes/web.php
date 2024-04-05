@@ -18,6 +18,9 @@ Route::get('/',[FrontendController::class,'index']);
 Route::get('/about/{id}',[FrontendController::class,'about']);
 Route::get('/contact',[FrontendController::class,'contact']);
 
+Route::get('/student',[FrontendController::class,'student']);
+
+
 
 
 
