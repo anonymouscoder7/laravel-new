@@ -7,28 +7,40 @@ use Illuminate\Http\Request;
 
 class StudentController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
+   
     public function index()
     {
         //
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+
     public function create()
     {
-        //
+        return view('create-student');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+
     public function store(Request $request)
     {
-        //
+        // store garne function 
+        
+        // dd($request->all());
+
+        $student = new Student();
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->contact = $request->contact;
+        $student->description = $request->desc;
+        if($request->hasFile('image')){
+            $file = $request->file('image');
+            $imagename = time(). $file->getClientOriginalName();
+            $file->move('student',$imagename);
+            $student->image = 'student/'.$imagename; 
+        }
+        $student->save();
+        return back();
+        // return redirect('/');
     }
 
     /**

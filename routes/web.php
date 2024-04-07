@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\FrontendController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,7 +19,9 @@ Route::get('/',[FrontendController::class,'index']);
 Route::get('/about/{id}',[FrontendController::class,'about']);
 Route::get('/contact',[FrontendController::class,'contact']);
 
-Route::get('/student',[FrontendController::class,'student']);
+Route::get('/students',[StudentController::class,'create']);
+Route::post('/store-student',[StudentController::class,'store']);
+
 
 
 

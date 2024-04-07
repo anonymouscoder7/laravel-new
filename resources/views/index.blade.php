@@ -36,7 +36,7 @@
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/student">Student</a>
+                        <a class="nav-link" href="/students">Student</a>
                     </li>
                     
                 </ul>

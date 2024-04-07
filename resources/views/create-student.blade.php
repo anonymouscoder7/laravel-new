@@ -33,7 +33,7 @@
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/student">Student</a>
+                        <a class="nav-link" href="/students">Student</a>
                     </li>
 
                 </ul>
@@ -45,27 +45,27 @@
         </div>
     </nav>
     <div class="container">
-        <form action="">
+        <form action="/store-student" method="post" enctype="multipart/form-data">
+            @csrf
             <div class="form-group">
                 <label for="">Name</label>
-                <input type="text" name="" class="form-control">
+                <input type="text" name="name" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Email</label>
-                <input type="email" name="" class="form-control">
+                <input type="email" name="email" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Contact</label>
-                <input type="tel" name="" class="form-control">
+                <input type="tel" name="contact" class="form-control">
             </div>
             <div class="form-group">
                 <label for="">Description</label>
-                <textarea name="" id="" class="form-control" cols="30" rows="5"></textarea>
+                <textarea name="desc" id="" class="form-control" cols="30" rows="5"></textarea>
             </div>
             <div class="form-group">
                 <label for="">Image</label>
-                <input type="file" name="" class="form-control">
-
+                <input type="file" name="image" class="form-control" required>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
