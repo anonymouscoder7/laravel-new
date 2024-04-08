@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Student;
 use Illuminate\Http\Request;
 
 class FrontendController extends Controller
 {
     function index() {
-        $name = 'ram';
-        $contact = 9862220799;
-        return view('index',compact('name','contact'));
+        // data get
+        $students = Student::all(); 
+        return view('index',compact('students'));
     }
     function about($id){
         dd($id);

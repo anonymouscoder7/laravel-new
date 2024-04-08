@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class StudentController extends Controller
 {
 
-   
+
     public function index()
     {
         //
@@ -24,19 +24,17 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         // store garne function 
-        
-        // dd($request->all());
 
         $student = new Student();
         $student->name = $request->name;
         $student->email = $request->email;
         $student->contact = $request->contact;
         $student->description = $request->desc;
-        if($request->hasFile('image')){
+        if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $imagename = time(). $file->getClientOriginalName();
-            $file->move('student',$imagename);
-            $student->image = 'student/'.$imagename; 
+            $imagename = time() . $file->getClientOriginalName();
+            $file->move('student', $imagename);
+            $student->image = 'student/' . $imagename;
         }
         $student->save();
         return back();
@@ -70,8 +68,11 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Student $student)
+    public function destroy($id)
     {
-        //
+
+        $stu = Student::find($id);
+        $stu->delete();
+        return back();
     }
 }

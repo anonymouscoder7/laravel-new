@@ -11,12 +11,12 @@
 
     <title>Hello, world!</title>
     <!-- css -->
-    <link href="{{asset('css/style.css')}}" rel="stylesheet" >
+    <link href="{{asset('css/style.css')}}" rel="stylesheet">
 
 
 </head>
 
-<body >
+<body>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
@@ -38,7 +38,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/students">Student</a>
                     </li>
-                    
+
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -47,7 +47,39 @@
             </div>
         </div>
     </nav>
-    <h1>Hello {{$name }}</h1>
+ 
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Contact</th>
+                <th scope="col">Desription</th>
+                <th scope="col">Image</th>
+                <th>Action</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach($students as $data)
+            <tr>
+                <th scope="row">{{$data->id}}</th>
+                <td>{{$data->name}}</td>
+                <td>{{$data->email}}</td>
+                <td>{{$data->contact}}</td>
+                <td>{{$data->description}}</td>
+                <td><img src="{{asset($data->image)}}"  width="80" alt=""></td>
+                <td>
+                    <a href="/delete-student/{{$data->id}}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            @endforeach
+
+
+        </tbody>
+    </table>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 </body>
 

@@ -22,6 +22,8 @@ Route::get('/contact',[FrontendController::class,'contact']);
 Route::get('/students',[StudentController::class,'create']);
 Route::post('/store-student',[StudentController::class,'store']);
 
+Route::get('/delete-student/{id}',[StudentController::class,'destroy']);
+
 
 
 
