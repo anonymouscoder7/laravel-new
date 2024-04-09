@@ -52,17 +52,30 @@ class StudentController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Student $student)
+    public function edit($id)
     {
-        //
+        $student = Student::find($id);
+        return view('edit-student',compact('student'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request)
     {
-        //
+        $student = Student::find($request->student_id);
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->contact = $request->contact;
+        $student->description = $request->desc;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $imagename = time() . $file->getClientOriginalName();
+            $file->move('student', $imagename);
+            $student->image = 'student/' . $imagename;
+        }
+        $student->update();
+        return redirect('/');
     }
 
     /**

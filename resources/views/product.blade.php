@@ -44,6 +44,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/create-product">Create Product</a>
                     </li>
+
                 </ul>
                 <form class="d-flex">
                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -58,8 +59,7 @@
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Contact</th>
+                <th scope="col">Price</th>
                 <th scope="col">Desription</th>
                 <th scope="col">Image</th>
                 <th>Action</th>
@@ -67,18 +67,17 @@
             </tr>
         </thead>
         <tbody>
-            @foreach($students as $data)
+            @foreach($datas as $data)
             <tr>
                 <th scope="row">{{$data->id}}</th>
                 <td>{{$data->name}}</td>
-                <td>{{$data->email}}</td>
-                <td>{{$data->contact}}</td>
+=                <td>{{$data->price}}</td>
                 <td>{{$data->description}}</td>
                 <td><img src="{{asset($data->image)}}" width="80" alt=""></td>
                 <td>
-                    <a href="/edit-student/{{$data->id}}" class="btn btn-primary">Edit</a>
+                    <a href="/edit-product/{{$data->id}}" class="btn btn-primary">Edit</a>
 
-                    <a href="/delete-student/{{$data->id}}" class="btn btn-danger">Delete</a>
+                    <a href="/delete-product/{{$data->id}}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach
